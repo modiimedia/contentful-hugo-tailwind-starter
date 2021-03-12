@@ -1,0 +1,49 @@
+{
+  "name": "hugo-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run bundle-js:watch\" \"npm run hugo-server\"",
+    "build": "npm run ctf && npm run bundle-js && hugo --minify",
+    "hugo-server": "npm run ctf:preview && hugo server --disableFastRender",
+    "webpack-watch": "webpack --watch",
+    "bundle-js": "webpack --mode=production",
+    "bundle-js:watch": "webpack --mode=development --watch",
+    "ctf": "contentful-hugo --wait 6000",
+    "ctf:preview": "contentful-hugo --preview",
+    "ctf:preview:server": "contentful-hugo --preview --server"
+  },
+  "author": "Joshua Sosso",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "fs-extra": "^9.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "autoprefixer": "^10.2.5",
+    "concurrently": "^6.0.0",
+    "contentful-hugo": "^1.14.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "hugo-bin": "^0.69.0",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "prettier": "^2.2.1",
+    "prettier-plugin-go-template": "0.0.10",
+    "tailwindcss": "^2.0.3",
+    "ts-loader": "^8.0.18",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  }
+}
