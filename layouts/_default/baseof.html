@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
     {{ $tailwind := resources.Get "styles/tailwind.css" | postCSS (dict "config" "./postcss.config.js") }}
     {{ $styles := slice $tailwind | resources.Concat "css/styles.css" }}
-  
     {{ if site.IsServer -}}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
       {{- else -}}
@@ -19,15 +18,13 @@
         crossorigin="anonymous"
       />
     {{- end }}
-  
+
     <title>Document</title>
   </head>
   <body>
-    
-    {{ block "main" . }}
+    {{ block "main" . }} {{ end }}
 
-    {{ end }}
-
+    {{/*  the webpack bundle result  */}}
     <script src="/js/main.js"></script>
   </body>
 </html>

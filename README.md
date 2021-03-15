@@ -1,6 +1,6 @@
 # Contentful Hugo Tailwind Starter
 
-Simple starter project for sites that use Contentful, Hugo, TailwindCSS, Typescript, and Webpack.
+An opinionated Hugo starter template with TailwindCSS, [contentful-hugo](https://github.com/ModiiMedia/contentful-hugo), Typescript, and Webpack
 
 ## Prerequisites
 
@@ -29,3 +29,19 @@ npm run dev
 # production build
 npm run build
 ```
+
+## Getting Live Updates From Contentful in Localhost
+
+*Before following these instructions make sure you have [NGROK](https://ngrok.com/) installed.*
+
+After running `npm run dev` you will have your website running at `http://localhost:1313` and the Contentful-Hugo server running at `http://localhost:1414`
+
+Open a new terminal window and run `ngrok http 1414`. This will generate a public url for localhost port 1414.
+
+![](readme-assets/ngrok-screenshot.JPG)
+
+Copy either the http or the https public URL and use it as a webhook endpoint in Contentful. Make sure the method is set to `POST`. You can have the webhook trigger on all events or specific events.
+
+![](readme-assets/contentful-webhook-screenshot.JPG)
+
+Bear in mind that this url will change every time you restart NGROK. So you will need to update the webhook URL in Contentful whenever you do this.

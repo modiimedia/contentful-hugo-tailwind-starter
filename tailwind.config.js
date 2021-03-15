@@ -9,6 +9,7 @@ module.exports = {
       './assets/**/*.ts',
       './assets/**/*.scss',
       './assets/**/*.css',
+      './typescript/**/*.ts',
     ],
   },
 };

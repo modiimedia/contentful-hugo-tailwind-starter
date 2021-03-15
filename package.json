@@ -7,18 +7,20 @@
     "buildTags": "extended"
   },
   "scripts": {
-    "dev": "concurrently \"npm run bundle-js:watch\" \"npm run hugo-server\"",
+    "dev": "concurrently \"npm run bundle-js:watch\" \"npm run hugo-server\" \nnpm run ctf:preview:server",
     "build": "npm run ctf && npm run bundle-js && hugo --minify",
     "hugo-server": "npm run ctf:preview && hugo server --disableFastRender",
-    "webpack-watch": "webpack --watch",
+    "hugo-server:live": "npm run ctf:preview && hugo server --disableFastRender --renderToDisk --liveReloadPort 80",
+    "hugo-server:live-ssl": "npm run ctf:preview && hugo server --disableFastRender --renderToDisk --liveReloadPort 443",
     "bundle-js": "webpack --mode=production",
     "bundle-js:watch": "webpack --mode=development --watch",
     "ctf": "contentful-hugo --wait 6000",
     "ctf:preview": "contentful-hugo --preview",
-    "ctf:preview:server": "contentful-hugo --preview --server"
+    "ctf:preview:server": "contentful-hugo --preview --server",
+    "live-preview-server": "npm run bundle-js && concurrently \"npm run hugo-server:live-ssl\" \"npm run ctf:preview:server\""
   },
   "author": "Joshua Sosso",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "fs-extra": "^9.1.0"
   },

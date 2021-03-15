@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
+    // if you have another JS entry point add it here
     main: './typescript/main.ts',
   },
   devtool: 'inline-source-map',
