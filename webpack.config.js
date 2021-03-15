@@ -5,6 +5,7 @@ module.exports = {
     // if you have another JS entry point add it here
     main: './typescript/main.ts',
   },
+  target: 'web',
   devtool: 'inline-source-map',
   module: {
     rules: [
