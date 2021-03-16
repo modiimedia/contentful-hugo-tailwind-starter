@@ -32,7 +32,7 @@ npm run build
 
 ## Getting Live Updates From Contentful in Localhost
 
-*Before following these instructions make sure you have [NGROK](https://ngrok.com/) installed.*
+_Before following these instructions make sure you have [NGROK](https://ngrok.com/) installed._
 
 After running `npm run dev` you will have your website running at `http://localhost:1313` and the Contentful-Hugo server running at `http://localhost:1414`
 
