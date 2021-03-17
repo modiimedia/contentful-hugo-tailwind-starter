@@ -5,3 +5,4 @@ static/js
 resources
 node_modules
 .env
+hugo_stats.json
