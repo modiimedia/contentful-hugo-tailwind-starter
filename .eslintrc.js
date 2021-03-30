@@ -11,6 +11,7 @@ module.exports = {
     },
     plugins: ['@typescript-eslint', 'html'],
     rules: {
+        'no-plusplus': 0,
         'import/extensions': 0,
         'arrow-body-style': [2, 'always'],
         'prefer-destructuring': 0,
