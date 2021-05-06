@@ -18,7 +18,7 @@ npm install
 npx contentful-hugo --init
 ```
 
-Create a `.env` file following the templated laid out in `.env.example`
+Create a `.env` file following the templated laid out in `.env.example`. Follow Contentful-Hugo configuration instructions [here](https://github.com/ModiiMedia/contentful-hugo#configuration).
 
 ## Usage
 
