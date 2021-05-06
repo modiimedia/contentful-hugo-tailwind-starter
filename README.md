@@ -1,6 +1,6 @@
 # Contentful Hugo Tailwind Starter
 
-An opinionated Hugo starter template with TailwindCSS, [contentful-hugo](https://github.com/ModiiMedia/contentful-hugo), Typescript, and Webpack
+An opinionated Hugo starter project with TailwindCSS, [contentful-hugo](https://github.com/ModiiMedia/contentful-hugo), Typescript, and Webpack
 
 ## Prerequisites
 

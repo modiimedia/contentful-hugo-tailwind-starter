@@ -13,6 +13,8 @@ module.exports = {
     rules: {
         'no-plusplus': 0,
         'import/extensions': 0,
+        // typescript handles this
+        'import/no-unresolved': 0,
         'arrow-body-style': [2, 'always'],
         'prefer-destructuring': 0,
         'no-restricted-syntax': [
