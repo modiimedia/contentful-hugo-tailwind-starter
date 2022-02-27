@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {{/*  css styles  */}}
-        {{ $tailwind := resources.Get "styles/tailwind.css" | postCSS (dict "config" "./postcss.config.js") }}
+        {{ $tailwind := resources.Get "styles/tailwind.build.css" }}
         {{ $styles := slice $tailwind | resources.Concat "css/styles.css" }}
         {{ if site.IsServer -}}
             <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
@@ -19,11 +19,10 @@
                 crossorigin="anonymous"
             />
         {{- end }}
-
         <title>Document</title>
     </head>
     <body>
-        {{ block "main" . }} {{ end }}
+        {{ block "main" . }}> {{ end }}>
 
         {{/*  the webpack bundle result  */}}
         <script src="/js/main.js"></script>
